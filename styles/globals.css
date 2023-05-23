@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "notoSans";
+  src: url("../assets/fonts/NotoSansJP-Light.otf") format("opentype");
+}
+
+@layer base {
+  img {
+    position: static !important;
+    max-width: none;
+  }
+}

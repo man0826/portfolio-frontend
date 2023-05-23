@@ -1,0 +1,17 @@
+query GetWork($id: ID!) {
+  work(id: $id) {
+    data {
+      id
+      attributes {
+        ...Work
+        category {
+          data {
+            attributes {
+              ...Category
+            }
+          }
+        }
+      }
+    }
+  }
+}

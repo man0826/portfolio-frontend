@@ -1,0 +1,27 @@
+fragment Work on Work {
+  name
+  description
+  url
+  github
+  thumbnail {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
+  display {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
+  screenshot {
+    data {
+      attributes {
+        url
+      }
+    }
+  }
+}

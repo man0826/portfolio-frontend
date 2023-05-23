@@ -1,0 +1,17 @@
+query GetWorks {
+  works(sort: "order:asc", pagination: { limit: 100 }) {
+    data {
+      id
+      attributes {
+        ...Work
+        category {
+          data {
+            attributes {
+              ...Category
+            }
+          }
+        }
+      }
+    }
+  }
+}

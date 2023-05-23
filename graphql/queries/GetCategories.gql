@@ -1,0 +1,18 @@
+query GetCategories {
+  categories(sort: "order:asc") {
+    data {
+      id
+      attributes {
+        ...Category
+        works(sort: "order:asc", pagination: { limit: 100 }) {
+          data {
+            id
+            attributes {
+              ...Work
+            }
+          }
+        }
+      }
+    }
+  }
+}

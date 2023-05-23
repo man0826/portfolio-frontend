@@ -1,0 +1,10 @@
+query GetSkills {
+  skills(sort: "order:asc") {
+    data {
+      id
+      attributes {
+        ...Skill
+      }
+    }
+  }
+}
