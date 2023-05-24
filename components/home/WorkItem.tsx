@@ -23,7 +23,7 @@ const WorkItem = ({ id, work }: Props) => {
       <Link
         className={`${
           isLoaded ? "opacity-100 !h-full" : "opacity-0 !h-0"
-        } group relative block w-full h-full before:w-full before:h-full before:bg-black before:mix-blend-multiply before:opacity-0 hover:before:opacity-70 before:transition-all before:duration-300 before:absolute before:top-0 before:left-0 before:z-10`}
+        } group relative block w-full before:w-full before:h-full before:bg-black before:mix-blend-multiply before:opacity-0 hover:before:opacity-70 before:transition-all before:duration-300 before:absolute before:top-0 before:left-0 before:z-10`}
         href={`/work/${id}`}
       >
         <Image

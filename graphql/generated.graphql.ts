@@ -1076,7 +1076,8 @@ export type Work = {
   createdAt?: Maybe<Scalars['DateTime']>;
   description?: Maybe<Scalars['String']>;
   display?: Maybe<UploadFileEntityResponse>;
-  github?: Maybe<Scalars['String']>;
+  github1?: Maybe<Scalars['String']>;
+  github2?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   order?: Maybe<Scalars['Int']>;
   publishedAt?: Maybe<Scalars['DateTime']>;
@@ -1108,7 +1109,8 @@ export type WorkFiltersInput = {
   category?: InputMaybe<CategoryFiltersInput>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
   description?: InputMaybe<StringFilterInput>;
-  github?: InputMaybe<StringFilterInput>;
+  github1?: InputMaybe<StringFilterInput>;
+  github2?: InputMaybe<StringFilterInput>;
   id?: InputMaybe<IdFilterInput>;
   name?: InputMaybe<StringFilterInput>;
   not?: InputMaybe<WorkFiltersInput>;
@@ -1123,7 +1125,8 @@ export type WorkInput = {
   category?: InputMaybe<Scalars['ID']>;
   description?: InputMaybe<Scalars['String']>;
   display?: InputMaybe<Scalars['ID']>;
-  github?: InputMaybe<Scalars['String']>;
+  github1?: InputMaybe<Scalars['String']>;
+  github2?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   order?: InputMaybe<Scalars['Int']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
@@ -1141,12 +1144,12 @@ export type CategoryFragment = { __typename?: 'Category', name?: string | null }
 
 export type SkillFragment = { __typename?: 'Skill', name?: string | null, percent?: number | null };
 
-export type WorkFragment = { __typename?: 'Work', name?: string | null, description?: string | null, url?: string | null, github?: string | null, thumbnail?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, display?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, screenshot?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null };
+export type WorkFragment = { __typename?: 'Work', name?: string | null, description?: string | null, url?: string | null, github1?: string | null, github2?: string | null, thumbnail?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, display?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, screenshot?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null };
 
 export type GetCategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetCategoriesQuery = { __typename?: 'Query', categories?: { __typename?: 'CategoryEntityResponseCollection', data: Array<{ __typename?: 'CategoryEntity', id?: string | null, attributes?: { __typename?: 'Category', name?: string | null, works?: { __typename?: 'WorkRelationResponseCollection', data: Array<{ __typename?: 'WorkEntity', id?: string | null, attributes?: { __typename?: 'Work', name?: string | null, description?: string | null, url?: string | null, github?: string | null, thumbnail?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, display?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, screenshot?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null } | null }> } | null } | null }> } | null };
+export type GetCategoriesQuery = { __typename?: 'Query', categories?: { __typename?: 'CategoryEntityResponseCollection', data: Array<{ __typename?: 'CategoryEntity', id?: string | null, attributes?: { __typename?: 'Category', name?: string | null, works?: { __typename?: 'WorkRelationResponseCollection', data: Array<{ __typename?: 'WorkEntity', id?: string | null, attributes?: { __typename?: 'Work', name?: string | null, description?: string | null, url?: string | null, github1?: string | null, github2?: string | null, thumbnail?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, display?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, screenshot?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null } | null }> } | null } | null }> } | null };
 
 export type GetSkillsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -1158,12 +1161,12 @@ export type GetWorkQueryVariables = Exact<{
 }>;
 
 
-export type GetWorkQuery = { __typename?: 'Query', work?: { __typename?: 'WorkEntityResponse', data?: { __typename?: 'WorkEntity', id?: string | null, attributes?: { __typename?: 'Work', name?: string | null, description?: string | null, url?: string | null, github?: string | null, category?: { __typename?: 'CategoryEntityResponse', data?: { __typename?: 'CategoryEntity', attributes?: { __typename?: 'Category', name?: string | null } | null } | null } | null, thumbnail?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, display?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, screenshot?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null } | null } | null } | null };
+export type GetWorkQuery = { __typename?: 'Query', work?: { __typename?: 'WorkEntityResponse', data?: { __typename?: 'WorkEntity', id?: string | null, attributes?: { __typename?: 'Work', name?: string | null, description?: string | null, url?: string | null, github1?: string | null, github2?: string | null, category?: { __typename?: 'CategoryEntityResponse', data?: { __typename?: 'CategoryEntity', attributes?: { __typename?: 'Category', name?: string | null } | null } | null } | null, thumbnail?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, display?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, screenshot?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null } | null } | null } | null };
 
 export type GetWorksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetWorksQuery = { __typename?: 'Query', works?: { __typename?: 'WorkEntityResponseCollection', data: Array<{ __typename?: 'WorkEntity', id?: string | null, attributes?: { __typename?: 'Work', name?: string | null, description?: string | null, url?: string | null, github?: string | null, category?: { __typename?: 'CategoryEntityResponse', data?: { __typename?: 'CategoryEntity', attributes?: { __typename?: 'Category', name?: string | null } | null } | null } | null, thumbnail?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, display?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, screenshot?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null } | null }> } | null };
+export type GetWorksQuery = { __typename?: 'Query', works?: { __typename?: 'WorkEntityResponseCollection', data: Array<{ __typename?: 'WorkEntity', id?: string | null, attributes?: { __typename?: 'Work', name?: string | null, description?: string | null, url?: string | null, github1?: string | null, github2?: string | null, category?: { __typename?: 'CategoryEntityResponse', data?: { __typename?: 'CategoryEntity', attributes?: { __typename?: 'Category', name?: string | null } | null } | null } | null, thumbnail?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, display?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null, screenshot?: { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', url: string } | null } | null } | null } | null }> } | null };
 
 export const CategoryFragmentDoc = gql`
     fragment Category on Category {
@@ -1181,7 +1184,8 @@ export const WorkFragmentDoc = gql`
   name
   description
   url
-  github
+  github1
+  github2
   thumbnail {
     data {
       attributes {

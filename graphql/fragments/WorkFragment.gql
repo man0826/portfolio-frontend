@@ -2,7 +2,8 @@ fragment Work on Work {
   name
   description
   url
-  github
+  github1
+  github2
   thumbnail {
     data {
       attributes {

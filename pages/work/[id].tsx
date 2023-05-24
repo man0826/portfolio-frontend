@@ -73,34 +73,54 @@ const Work: NextPage<Props> = ({ work }) => {
             {!isDisplayLoaded ? (
               <Skeleton className="h-[23px] md:h-[25px]" />
             ) : (
-              <Link
-                className="pb-0.5 font-light text-sm md:text-base tracking-widest font-lato break-all transition-all duration-200 border-b-[0.5px] border-solid border-black hover:opacity-50"
-                href={work.data.attributes.url}
-                target="_blank"
-              >
-                {work.data?.attributes?.url}
-              </Link>
+              <span className="font-light text-sm md:text-base tracking-widest font-lato">
+                <span className="mr-3">[URL]</span>
+                <Link
+                  className="pb-0.5 font-light text-sm md:text-base tracking-widest font-lato break-all transition-all duration-200 border-b-[0.5px] border-solid border-black hover:opacity-50"
+                  href={work.data.attributes.url}
+                  target="_blank"
+                >
+                  {work.data?.attributes?.url}
+                </Link>
+              </span>
             )}
           </>
         )}
-        {work.data?.attributes?.github && (
+        {work.data?.attributes?.github1 && (
           <>
             {!isDisplayLoaded ? (
-              <Skeleton className="h-[40px] md:h-[25px] mt-4" />
+              <>
+                <Skeleton className="h-[100px] sm:h-[60px] mt-8" />
+              </>
             ) : (
-              <dl className="md:flex mt-4 text-sm md:text-base tracking-widest font-light font-lato">
-                <dt className="mr-2">
-                  GitHub<span className="hidden md:inline-block">:</span>
-                </dt>
+              <dl className="mt-5 text-sm md:text-base tracking-widest font-light font-lato">
+                <dt className="mb-1.5">[GitHub]</dt>
                 <dd>
+                  <span className="block sm:inline text-[13px] md:text-[15px] sm:mr-2 mb-0.5 sm:mb-0">
+                    FRONTEND :
+                  </span>
                   <Link
                     className="pb-0.5 break-all transition-all duration-200 border-b-[0.5px] border-solid border-black hover:opacity-50"
-                    href={work.data.attributes.github}
+                    href={work.data.attributes.github1}
                     target="_blank"
                   >
-                    {work.data.attributes.github}
+                    {work.data.attributes.github1}
                   </Link>
                 </dd>
+                {work.data?.attributes?.github2 && (
+                  <dd className="mt-3 sm:mt-1.5">
+                    <span className="block sm:inline text-[13px] md:text-[15px] sm:mr-2 mb-0.5 sm:mb-0">
+                      BACKEND :
+                    </span>
+                    <Link
+                      className="pb-0.5 break-all transition-all duration-200 border-b-[0.5px] border-solid border-black hover:opacity-50"
+                      href={work.data.attributes.github2}
+                      target="_blank"
+                    >
+                      {work.data.attributes.github2}
+                    </Link>
+                  </dd>
+                )}
               </dl>
             )}
           </>
